@@ -1,4 +1,4 @@
-# 🛰️ Orbit Decay Modelling: Satellite Re-entry Prediction
+# Orbit Decay Modelling: Satellite Re-entry Prediction
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg) ![Scikit-Learn](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-orange) ![SHAP](https://img.shields.io/badge/Explainable%20AI-SHAP-success)
 
 ## Overview
@@ -8,7 +8,7 @@ Instead of relying solely on complex physics simulations, this project bridges *
 
 ---
 
-## 🚀 The Physics to ML Pipeline
+## The Physics to ML Pipeline
 
 1. **Data Ingestion:** Parsed historical TLE data from verified public archives (e.g., the Tiangong-1 decay event).
 2. **Feature Engineering:** Extracted raw string data and converted it into physical features:
@@ -18,7 +18,7 @@ Instead of relying solely on complex physics simulations, this project bridges *
 4. **Modeling:** Trained a `RandomForestRegressor` to capture the highly non-linear, exponential "cliff" of orbital decay.
 
 <details>
-<summary><b>💻 Click to view the core Keplerian Feature Extractor</b></summary>
+<summary><b>Click to view the core Keplerian Feature Extractor</b></summary>
 
 ```python
 def parse_tle(name, line1, line2):
@@ -42,7 +42,7 @@ def parse_tle(name, line1, line2):
 
 ---
 
-## 📊 Results & Explainable AI (XAI)
+## Results & Explainable AI (XAI)
 Aerospace models cannot be "black boxes." A Random Forest was chosen not only for its robustness to noisy radar data but because it allows for full mathematical transparency.
 
 **Baseline Performance:** The model achieved a Mean Absolute Error (MAE) of ~7 days on a 100-day decay trajectory, successfully learning the exponential drag curve without explicitly being programmed with atmospheric density models.
@@ -50,16 +50,16 @@ Aerospace models cannot be "black boxes." A Random Forest was chosen not only fo
 ### Global Interpretability
 The SHAP Summary plot proves the model learned the laws of physics. It correctly identified that high atmospheric drag (B*) is the strongest predictor of an immediate re-entry.
 
-![SHAP Summary Plot](assets/Screenshot 2026-03-25 125750.png)
+![SHAP Summary Plot](assets/Screenshot%202026-03-25%20125750.png)
 
 ### Local Interpretability
 For any specific prediction, the model provides a mathematical receipt. The Waterfall plot below demonstrates how the model arrived at an 85-day prediction by applying bonuses and penalties based on the satellite's specific altitude and drag readings at that exact moment.
 
-![SHAP Waterfall Plot](assets/Screenshot 2026-03-25 125814.png)
+![SHAP Waterfall Plot](assets/Screenshot%202026-03-25%20125814.png)
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 orbital-guardian/
@@ -75,7 +75,7 @@ orbital-guardian/
 
 ---
 
-## 🛠️ How to Run Locally
+## How to Run Locally
 
 1. **Clone the repository:**
    ```bash

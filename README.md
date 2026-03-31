@@ -1,8 +1,8 @@
-# 🛰️ Orbital Guardian: Satellite Re-entry Prediction
+# 🛰️ Orbit Decay Modelling: Satellite Re-entry Prediction
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg) ![Scikit-Learn](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-orange) ![SHAP](https://img.shields.io/badge/Explainable%20AI-SHAP-success)
 
 ## Overview
-**Orbital Guardian** is an end-to-end Machine Learning pipeline designed to predict the atmospheric re-entry dates of decaying satellites. 
+This is an end-to-end Machine Learning pipeline designed to predict the atmospheric re-entry dates of decaying satellites. 
 
 Instead of relying solely on complex physics simulations, this project bridges **Astrodynamics** and **Data Science**. It ingests raw Two-Line Elements (TLEs), extracts physical features using Kepler's Third Law, and trains an ensemble Random Forest model to predict the "days to decay." Most importantly, the model's decisions are mathematically decoded using **SHAP (SHapley Additive exPlanations)** to ensure trust and transparency.
 
@@ -50,12 +50,12 @@ Aerospace models cannot be "black boxes." A Random Forest was chosen not only fo
 ### Global Interpretability
 The SHAP Summary plot proves the model learned the laws of physics. It correctly identified that high atmospheric drag (B*) is the strongest predictor of an immediate re-entry.
 
-![SHAP Summary Plot](assets/shap_summary.png)
+![SHAP Summary Plot](assets/Screenshot 2026-03-25 125750.png)
 
 ### Local Interpretability
 For any specific prediction, the model provides a mathematical receipt. The Waterfall plot below demonstrates how the model arrived at an 85-day prediction by applying bonuses and penalties based on the satellite's specific altitude and drag readings at that exact moment.
 
-![SHAP Waterfall Plot](assets/shap_waterfall.png)
+![SHAP Waterfall Plot](assets/Screenshot 2026-03-25 125814.png)
 
 ---
 
@@ -94,6 +94,3 @@ orbital-guardian/
    ```bash
    python src/train_model.py
    ```
-
----
-*Built as a portfolio piece to demonstrate end-to-end ML engineering, physical feature extraction, and model explainability.*
